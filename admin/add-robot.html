@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add New Robot | MOOK Robotics Hub</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/admin.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="admin-panel">
+        <!-- Sidebar Navigation -->
+        <aside class="admin-sidebar">
+            <div class="admin-logo">
+                <h2>MOOK</h2>
+                <p>Admin Panel</p>
+            </div>
+            <ul class="admin-nav">
+                <li>
+                    <a href="dashboard.html">
+                        <i class="fas fa-tachometer-alt"></i> Dashboard
+                    </a>
+                </li>
+                <li>
+                    <a href="robots.html" class="active">
+                        <i class="fas fa-robot"></i> Robots
+                    </a>
+                </li>
+                <li>
+                    <a href="categories.html">
+                        <i class="fas fa-list"></i> Categories
+                    </a>
+                </li>
+                <li>
+                    <a href="news.html">
+                        <i class="fas fa-newspaper"></i> News
+                    </a>
+                </li>
+                <li>
+                    <a href="users.html">
+                        <i class="fas fa-users"></i> Users
+                    </a>
+                </li>
+                <li>
+                    <a href="comments.html">
+                        <i class="fas fa-comments"></i> Comments
+                    </a>
+                </li>
+                <li>
+                    <a href="settings.html">
+                        <i class="fas fa-cog"></i> Settings
+                    </a>
+                </li>
+                <li>
+                    <a href="../index.html">
+                        <i class="fas fa-home"></i> Back to Site
+                    </a>
+                </li>
+                <li>
+                    <a href="#" id="adminLogout">
+                        <i class="fas fa-sign-out-alt"></i> Logout
+                    </a>
+                </li>
+            </ul>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="admin-content">
+            <header class="admin-header">
+                <h1>Add New Robot</h1>
+                <div class="admin-user-menu">
+                    <div class="user-dropdown">
+                        <div class="user-avatar">A</div>
+                        <span class="user-name">Admin</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="dropdown-content">
+                        <a href="profile.html">
+                            <i class="fas fa-user"></i> Profile
+                        </a>
+                        <a href="settings.html">
+                            <i class="fas fa-cog"></i> Settings
+                        </a>
+                        <a href="#" id="headerLogout">
+                            <i class="fas fa-sign-out-alt"></i> Logout
+                        </a>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Add Robot Form -->
+            <form id="addRobotForm" class="admin-form">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="robotName">Robot Name *</label>
+                        <input type="text" id="robotName" name="robotName" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="category">Category *</label>
+                        <select id="category" name="category" required>
+                            <option value="">Select Category</option>
+                            <option value="humanoid">Humanoid</option>
+                            <option value="industrial">Industrial</option>
+                            <option value="biomimetic">Biomimetic</option>
+                            <option value="domestic">Domestic</option>
+                            <option value="medical">Medical</option>
+                            <option value="aerial">Aerial</option>
+                            <option value="autonomous">Autonomous</option>
+                            <option value="ai">AI / Machine Learning</option>
+                            <option value="security">Security</option>
+                            <option value="educational">Educational</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="manufacturer">Manufacturer</label>
+                        <input type="text" id="manufacturer" name="manufacturer">
+                    </div>
+                    <div class="form-group">
+                        <label for="releaseYear">Release Year</label>
+                        <input type="number" id="releaseYear" name="releaseYear" min="1950" max="2025">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="shortDescription">Short Description *</label>
+                    <input type="text" id="shortDescription" name="shortDescription" placeholder="Brief description (max 150 characters)" maxlength="150" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="description">Full Description *</label>
+                    <textarea id="description" name="description" class="rich-text-editor" rows="8" required></textarea>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="technicalSpecs">Technical Specifications</label>
+                        <textarea id="technicalSpecs" name="technicalSpecs" rows="5"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="applications">Applications</label>
+                        <textarea id="applications" name="applications" rows="5"></textarea>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>Main Image *</label>
+                    <div class="file-upload">
+                        <div class="file-upload-icon">
+                            <i class="fas fa-cloud-upload-alt"></i>
+                        </div>
+                        <div class="file-upload-text">
+                            <p>Drag and drop your image here, or <strong>click to browse</strong></p>
+                            <p class="file-specs">Supported formats: JPG, PNG, WEBP. Max size: 5MB</p>
+                        </div>
+                        <input type="file" id="robotImage" name="robotImage" class="file-upload-input" accept="image/*" required>
+                        <div class="file-preview" id="robotImagePreview">
+                            <img id="imagePreview" src="#" alt="Image preview">
+                            <p class="file-name" id="imageName"></p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>Additional Images (up to 5)</label>
+                    <div class="file-upload">
+                        <div class="file-upload-icon">
+                            <i class="fas fa-images"></i>
+                        </div>
+                        <div class="file-upload-text">
+                            <p>Drag and drop multiple images here, or <strong>click to browse</strong></p>
+                            <p class="file-specs">Supported formats: JPG, PNG, WEBP. Max size: 5MB each</p>
+                        </div>
+                        <input type="file" id="additionalImages" name="additionalImages" class="file-upload-input" accept="image/*" multiple>
+                        <div class="file-preview" id="additionalImagesPreview">
+                            <div class="preview-grid" id="previewGrid"></div>
+                            <p class="file-name" id="additionalImagesCount"></p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="videoUrl">Video URL (YouTube or Vimeo)</label>
+                    <input type="url" id="videoUrl" name="videoUrl" placeholder="e.g., https://www.youtube.com/watch?v=abcdefg">
+                </div>
+
+                <div class="form-group">
+                    <label for="tags">Tags (comma-separated)</label>
+                    <input type="text" id="tags" name="tags" placeholder="e.g., artificial intelligence, machine learning, facial recognition">
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="website">Official Website</label>
+                        <input type="url" id="website" name="website" placeholder="e.g., https://www.manufacturer.com/robot">
+                    </div>
+                    <div class="form-group">
+                        <label for="price">Price (USD)</label>
+                        <input type="number" id="price" name="price" min="0" step="0.01">
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="featuredStatus">Featured Status</label>
+                        <select id="featuredStatus" name="featuredStatus">
+                            <option value="regular">Regular (Not Featured)</option>
+                            <option value="featured">Featured</option>
+                            <option value="trending">Trending</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Publishing Options</label>
+                        <div class="checkbox-group">
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="publishImmediately" name="publishImmediately" checked>
+                                Publish immediately
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="allowComments" name="allowComments" checked>
+                                Allow comments
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-actions">
+                    <button type="button" class="btn-cancel" id="cancelAddRobot">Cancel</button>
+                    <button type="submit" class="btn-save">Add Robot</button>
+                </div>
+            </form>
+        </main>
+    </div>
+
+    <script src="../js/admin.js"></script>
+    <script>
+        // Specific scripts for the Add Robot page
+        document.addEventListener('DOMContentLoaded', function() {
+            // Show image preview on file select
+            const robotImage = document.getElementById('robotImage');
+            const imagePreview = document.getElementById('imagePreview');
+            const imageName = document.getElementById('imageName');
+            const robotImagePreview = document.getElementById('robotImagePreview');
+            
+            robotImage.addEventListener('change', function() {
+                if (this.files && this.files[0]) {
+                    const file = this.files[0];
+                    const reader = new FileReader();
+                    
+                    reader.onload = function(e) {
+                        imagePreview.src = e.target.result;
+                        imageName.textContent = file.name;
+                        robotImagePreview.style.display = 'block';
+                    }
+                    
+                    reader.readAsDataURL(file);
+                }
+            });
+            
+            // Additional images preview
+            const additionalImages = document.getElementById('additionalImages');
+            const previewGrid = document.getElementById('previewGrid');
+            const additionalImagesCount = document.getElementById('additionalImagesCount');
+            const additionalImagesPreview = document.getElementById('additionalImagesPreview');
+            
+            additionalImages.addEventListener('change', function() {
+                if (this.files && this.files.length) {
+                    previewGrid.innerHTML = '';
+                    
+                    const maxFiles = 5;
+                    const filesToPreview = Array.from(this.files).slice(0, maxFiles);
+                    
+                    filesToPreview.forEach(file => {
+                        const reader = new FileReader();
+                        
+                        reader.onload = function(e) {
+                            const previewItem = document.createElement('div');
+                            previewItem.className = 'preview-item';
+                            
+                            const img = document.createElement('img');
+                            img.src = e.target.result;
+                            img.alt = file.name;
+                            
+                            previewItem.appendChild(img);
+                            previewGrid.appendChild(previewItem);
+                        }
+                        
+                        reader.readAsDataURL(file);
+                    });
+                    
+                    additionalImagesCount.textContent = `${filesToPreview.length} image${filesToPreview.length !== 1 ? 's' : ''} selected`;
+                    additionalImagesPreview.style.display = 'block';
+                }
+            });
+            
+            // Cancel button
+            document.getElementById('cancelAddRobot').addEventListener('click', function() {
+                if (confirm('Are you sure you want to cancel? All entered data will be lost.')) {
+                    window.location.href = 'robots.html';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
