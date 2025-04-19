@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MOOK Robotics Hub</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Navigation -->
+        <nav class="navbar">
+            <div class="logo">
+                <h1>MOOK</h1>
+                <p>Robotics Hub</p>
+            </div>
+            <div class="nav-links">
+                <a href="#" class="active">Home</a>
+                <a href="#categories">Categories</a>
+                <a href="#trending">Trending</a>
+                <a href="#news">News</a>
+                <a href="#about">About</a>
+            </div>
+            <div class="nav-actions">
+                <div class="search-container">
+                    <input type="text" id="searchInput" placeholder="Search robots...">
+                    <button id="searchBtn"><i class="fas fa-search"></i></button>
+                </div>
+                <div class="auth-buttons">
+                    <button id="loginBtn" class="btn-login">Log In</button>
+                    <button id="signupBtn" class="btn-signup">Sign Up</button>
+                </div>
+                <button id="menuToggle" class="menu-toggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </nav>
+
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Discover the World of Robotics</h1>
+                <p>Your comprehensive guide to past, present, and future robotic technologies</p>
+                <div class="hero-cta">
+                    <button id="exploreBtn" class="btn-primary">Start Exploring</button>
+                    <button id="aiAssistBtn" class="btn-secondary">Ask AI Assistant</button>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="robot-animation">
+                    <!-- Robot SVG or animated element will be added with CSS -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Robots Section -->
+        <section id="featured" class="featured-section">
+            <div class="section-header">
+                <h2>Featured Robots</h2>
+                <a href="#" class="view-all">View All <i class="fas fa-arrow-right"></i></a>
+            </div>
+            <div class="featured-grid">
+                <div class="robot-card" data-id="atlas">
+                    <div class="robot-image">
+                        <img src="https://via.placeholder.com/300x200" alt="Atlas Robot" class="placeholder-img">
+                    </div>
+                    <div class="robot-info">
+                        <h3>Atlas</h3>
+                        <p>Humanoid robot designed for search and rescue tasks</p>
+                        <div class="robot-tags">
+                            <span>Humanoid</span>
+                            <span>Boston Dynamics</span>
+                        </div>
+                        <button class="btn-details">Learn More</button>
+                    </div>
+                </div>
+                <div class="robot-card" data-id="spot">
+                    <div class="robot-image">
+                        <img src="https://via.placeholder.com/300x200" alt="Spot Robot" class="placeholder-img">
+                    </div>
+                    <div class="robot-info">
+                        <h3>Spot</h3>
+                        <p>Agile quadruped robot for industrial inspections</p>
+                        <div class="robot-tags">
+                            <span>Quadruped</span>
+                            <span>Boston Dynamics</span>
+                        </div>
+                        <button class="btn-details">Learn More</button>
+                    </div>
+                </div>
+                <div class="robot-card" data-id="pepper">
+                    <div class="robot-image">
+                        <img src="https://via.placeholder.com/300x200" alt="Pepper Robot" class="placeholder-img">
+                    </div>
+                    <div class="robot-info">
+                        <h3>Pepper</h3>
+                        <p>Social humanoid robot designed for human interaction</p>
+                        <div class="robot-tags">
+                            <span>Social</span>
+                            <span>SoftBank Robotics</span>
+                        </div>
+                        <button class="btn-details">Learn More</button>
+                    </div>
+                </div>
+                <div class="robot-card" data-id="sophia">
+                    <div class="robot-image">
+                        <img src="https://via.placeholder.com/300x200" alt="Sophia Robot" class="placeholder-img">
+                    </div>
+                    <div class="robot-info">
+                        <h3>Sophia</h3>
+                        <p>Advanced humanoid robot with facial expressions</p>
+                        <div class="robot-tags">
+                            <span>Humanoid</span>
+                            <span>Hanson Robotics</span>
+                        </div>
+                        <button class="btn-details">Learn More</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Categories Section -->
+        <section id="categories" class="categories-section">
+            <div class="section-header">
+                <h2>Robot Categories</h2>
+            </div>
+            <div class="categories-grid">
+                <div class="category-card">
+                    <div class="category-icon">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <h3>Humanoid</h3>
+                    <p>Robots with human-like appearance and capabilities</p>
+                </div>
+                <div class="category-card">
+                    <div class="category-icon">
+                        <i class="fas fa-industry"></i>
+                    </div>
+                    <h3>Industrial</h3>
+                    <p>Robots designed for manufacturing and assembly</p>
+                </div>
+                <div class="category-card">
+                    <div class="category-icon">
+                        <i class="fas fa-paw"></i>
+                    </div>
+                    <h3>Biomimetic</h3>
+                    <p>Robots inspired by animal movements and behaviors</p>
+                </div>
+                <div class="category-card">
+                    <div class="category-icon">
+                        <i class="fas fa-home"></i>
+                    </div>
+                    <h3>Domestic</h3>
+                    <p>Robots designed for household tasks and assistance</p>
+                </div>
+                <div class="category-card">
+                    <div class="category-icon">
+                        <i class="fas fa-microscope"></i>
+                    </div>
+                    <h3>Medical</h3>
+                    <p>Robots used in healthcare and surgical procedures</p>
+                </div>
+                <div class="category-card">
+                    <div class="category-icon">
+                        <i class="fas fa-car"></i>
+                    </div>
+                    <h3>Autonomous</h3>
+                    <p>Self-driving vehicles and drones</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- News Section -->
+        <section id="news" class="news-section">
+            <div class="section-header">
+                <h2>Latest Robotics News</h2>
+                <a href="#" class="view-all">All News <i class="fas fa-arrow-right"></i></a>
+            </div>
+            <div class="news-grid">
+                <div class="news-card">
+                    <div class="news-image">
+                        <img src="https://via.placeholder.com/400x225" alt="Robot News" class="placeholder-img">
+                    </div>
+                    <div class="news-content">
+                        <span class="news-date">April 15, 2025</span>
+                        <h3>New Breakthrough in Robotic Prosthetics</h3>
+                        <p>Researchers develop advanced sensory feedback system for prosthetic limbs</p>
+                        <a href="#" class="read-more">Read More</a>
+                    </div>
+                </div>
+                <div class="news-card">
+                    <div class="news-image">
+                        <img src="https://via.placeholder.com/400x225" alt="Robot News" class="placeholder-img">
+                    </div>
+                    <div class="news-content">
+                        <span class="news-date">April 10, 2025</span>
+                        <h3>Robots Join Efforts to Clean Ocean Plastic</h3>
+                        <p>Fleet of autonomous marine robots deployed to collect ocean debris</p>
+                        <a href="#" class="read-more">Read More</a>
+                    </div>
+                </div>
+                <div class="news-card">
+                    <div class="news-image">
+                        <img src="https://via.placeholder.com/400x225" alt="Robot News" class="placeholder-img">
+                    </div>
+                    <div class="news-content">
+                        <span class="news-date">April 5, 2025</span>
+                        <h3>AI-Powered Robots Enter Construction Industry</h3>
+                        <p>New generation of robots can autonomously operate construction equipment</p>
+                        <a href="#" class="read-more">Read More</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Newsletter Section -->
+        <section class="newsletter-section">
+            <div class="newsletter-content">
+                <h2>Stay Updated on Robot Innovations</h2>
+                <p>Subscribe to our newsletter for the latest robotics news and updates</p>
+                <form id="newsletterForm" class="newsletter-form">
+                    <input type="email" placeholder="Your email address" required>
+                    <button type="submit" class="btn-primary">Subscribe</button>
+                </form>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h2>MOOK</h2>
+                    <p>Robotics Hub</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h3>Explore</h3>
+                        <ul>
+                            <li><a href="#">Home</a></li>
+                            <li><a href="#categories">Categories</a></li>
+                            <li><a href="#featured">Featured</a></li>
+                            <li><a href="#news">News</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h3>About</h3>
+                        <ul>
+                            <li><a href="#">About Us</a></li>
+                            <li><a href="#">Contact</a></li>
+                            <li><a href="#">Privacy Policy</a></li>
+                            <li><a href="#">Terms of Service</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h3>Connect</h3>
+                        <div class="social-icons">
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-facebook"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                            <a href="#"><i class="fab fa-youtube"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2025 MOOK Robotics Hub. All rights reserved.</p>
+            </div>
+        </footer>
+
+        <!-- Modal Components -->
+        <div id="loginModal" class="modal">
+            <div class="modal-content">
+                <span class="close-modal">&times;</span>
+                <h2>Log In</h2>
+                <form id="loginForm">
+                    <div class="form-group">
+                        <label for="loginEmail">Email</label>
+                        <input type="email" id="loginEmail" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="loginPassword">Password</label>
+                        <input type="password" id="loginPassword" required>
+                    </div>
+                    <div class="form-actions">
+                        <button type="submit" class="btn-primary">Log In</button>
+                        <a href="#" class="forgot-password">Forgot Password?</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div id="signupModal" class="modal">
+            <div class="modal-content">
+                <span class="close-modal">&times;</span>
+                <h2>Create Account</h2>
+                <form id="signupForm">
+                    <div class="form-group">
+                        <label for="signupName">Full Name</label>
+                        <input type="text" id="signupName" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="signupEmail">Email</label>
+                        <input type="email" id="signupEmail" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="signupPassword">Password</label>
+                        <input type="password" id="signupPassword" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="signupConfirmPassword">Confirm Password</label>
+                        <input type="password" id="signupConfirmPassword" required>
+                    </div>
+                    <div class="form-actions">
+                        <button type="submit" class="btn-primary">Sign Up</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <!-- AI Assistant Chat -->
+        <div id="aiAssistant" class="ai-assistant">
+            <div class="ai-header">
+                <h3><i class="fas fa-robot"></i> AI Assistant</h3>
+                <button class="minimize-chat"><i class="fas fa-minus"></i></button>
+            </div>
+            <div class="chat-container">
+                <div class="chat-messages" id="chatMessages">
+                    <div class="message bot">
+                        <div class="message-content">
+                            <p>Hello! I'm your robotics expert assistant. How can I help you discover the world of robots today?</p>
+                        </div>
+                    </div>
+                </div>
+                <form id="chatForm" class="chat-input">
+                    <input type="text" id="userMessage" placeholder="Ask me about robotics...">
+                    <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                </form>
+            </div>
+        </div>
+
+        <div id="aiAssistantButton" class="ai-assistant-button">
+            <i class="fas fa-robot"></i>
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
