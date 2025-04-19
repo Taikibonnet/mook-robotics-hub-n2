@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard | MOOK Robotics Hub</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/admin.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="admin-panel">
+        <!-- Sidebar Navigation -->
+        <aside class="admin-sidebar">
+            <div class="admin-logo">
+                <h2>MOOK</h2>
+                <p>Admin Panel</p>
+            </div>
+            <ul class="admin-nav">
+                <li>
+                    <a href="dashboard.html" class="active">
+                        <i class="fas fa-tachometer-alt"></i> Dashboard
+                    </a>
+                </li>
+                <li>
+                    <a href="robots.html">
+                        <i class="fas fa-robot"></i> Robots
+                    </a>
+                </li>
+                <li>
+                    <a href="categories.html">
+                        <i class="fas fa-list"></i> Categories
+                    </a>
+                </li>
+                <li>
+                    <a href="news.html">
+                        <i class="fas fa-newspaper"></i> News
+                    </a>
+                </li>
+                <li>
+                    <a href="users.html">
+                        <i class="fas fa-users"></i> Users
+                    </a>
+                </li>
+                <li>
+                    <a href="comments.html">
+                        <i class="fas fa-comments"></i> Comments
+                    </a>
+                </li>
+                <li>
+                    <a href="settings.html">
+                        <i class="fas fa-cog"></i> Settings
+                    </a>
+                </li>
+                <li>
+                    <a href="../index.html">
+                        <i class="fas fa-home"></i> Back to Site
+                    </a>
+                </li>
+                <li>
+                    <a href="#" id="adminLogout">
+                        <i class="fas fa-sign-out-alt"></i> Logout
+                    </a>
+                </li>
+            </ul>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="admin-content">
+            <header class="admin-header">
+                <h1>Dashboard</h1>
+                <div class="admin-user-menu">
+                    <div class="user-dropdown">
+                        <div class="user-avatar">A</div>
+                        <span class="user-name">Admin</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="dropdown-content">
+                        <a href="profile.html">
+                            <i class="fas fa-user"></i> Profile
+                        </a>
+                        <a href="settings.html">
+                            <i class="fas fa-cog"></i> Settings
+                        </a>
+                        <a href="#" id="headerLogout">
+                            <i class="fas fa-sign-out-alt"></i> Logout
+                        </a>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Statistics Overview -->
+            <section class="admin-stats">
+                <div class="stat-card">
+                    <div class="stat-icon users-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div class="stat-value">1,254</div>
+                    <div class="stat-label">Total Users</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon robots-icon">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <div class="stat-value">176</div>
+                    <div class="stat-label">Robot Entries</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon views-icon">
+                        <i class="fas fa-eye"></i>
+                    </div>
+                    <div class="stat-value">25,392</div>
+                    <div class="stat-label">Page Views</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon comments-icon">
+                        <i class="fas fa-comments"></i>
+                    </div>
+                    <div class="stat-value">823</div>
+                    <div class="stat-label">Comments</div>
+                </div>
+            </section>
+
+            <!-- Recent Activities -->
+            <section class="recent-activities">
+                <h2>Recent Activities</h2>
+                <div class="activity-tabs">
+                    <button class="tab-btn active" data-tab="recent-robots">New Robots</button>
+                    <button class="tab-btn" data-tab="recent-users">New Users</button>
+                    <button class="tab-btn" data-tab="recent-comments">Recent Comments</button>
+                </div>
+
+                <div class="tab-content active" id="recent-robots">
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Robot Name</th>
+                                <th>Category</th>
+                                <th>Added By</th>
+                                <th>Date</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Neural Nexus 3000</td>
+                                <td>AI/Machine Learning</td>
+                                <td>admin@mook.com</td>
+                                <td>April 18, 2025</td>
+                                <td>
+                                    <button class="action-btn view-btn"><i class="fas fa-eye"></i></button>
+                                    <button class="action-btn edit-btn"><i class="fas fa-edit"></i></button>
+                                    <button class="action-btn delete-btn"><i class="fas fa-trash"></i></button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>BioMech Explorer</td>
+                                <td>Biomimetic</td>
+                                <td>sarah@robotics.org</td>
+                                <td>April 16, 2025</td>
+                                <td>
+                                    <button class="action-btn view-btn"><i class="fas fa-eye"></i></button>
+                                    <button class="action-btn edit-btn"><i class="fas fa-edit"></i></button>
+                                    <button class="action-btn delete-btn"><i class="fas fa-trash"></i></button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Quantum Leap Drone</td>
+                                <td>Aerial</td>
+                                <td>james@mook.com</td>
+                                <td>April 15, 2025</td>
+                                <td>
+                                    <button class="action-btn view-btn"><i class="fas fa-eye"></i></button>
+                                    <button class="action-btn edit-btn"><i class="fas fa-edit"></i></button>
+                                    <button class="action-btn delete-btn"><i class="fas fa-trash"></i></button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>MedAssist Pro</td>
+                                <td>Medical</td>
+                                <td>admin@mook.com</td>
+                                <td>April 14, 2025</td>
+                                <td>
+                                    <button class="action-btn view-btn"><i class="fas fa-eye"></i></button>
+                                    <button class="action-btn edit-btn"><i class="fas fa-edit"></i></button>
+                                    <button class="action-btn delete-btn"><i class="fas fa-trash"></i></button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Sentinel X</td>
+                                <td>Security</td>
+                                <td>thomas@security.net</td>
+                                <td>April 12, 2025</td>
+                                <td>
+                                    <button class="action-btn view-btn"><i class="fas fa-eye"></i></button>
+                                    <button class="action-btn edit-btn"><i class="fas fa-edit"></i></button>
+                                    <button class="action-btn delete-btn"><i class="fas fa-trash"></i></button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="tab-content" id="recent-users">
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Joined</th>
+                                <th>Status</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Emily Johnson</td>
+                                <td>emily@example.com</td>
+                                <td>April 18, 2025</td>
+                                <td><span class="status active">Active</span></td>
+                                <td>
+                                    <button class="action-btn view-btn"><i class="fas fa-eye"></i></button>
+                                    <button class="action-btn edit-btn"><i class="fas fa-edit"></i></button>
+                                    <button class="action-btn delete-btn"><i class="fas fa-trash"></i></button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Michael Smith</td>
+                                <td>michael@example.com</td>
+                                <td>April 17, 2025</td>
+                                <td><span class="status active">Active</span></td>
+                                <td>
+                                    <button class="action-btn view-btn"><i class="fas fa-eye"></i></button>
+                                    <button class="action-btn edit-btn"><i class="fas fa-edit"></i></button>
+                                    <button class="action-btn delete-btn"><i class="fas fa-trash"></i></button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Sarah Williams</td>
+                                <td>sarah@example.com</td>
+                                <td>April 16, 2025</td>
+                                <td><span class="status pending">Pending</span></td>
+                                <td>
+                                    <button class="action-btn view-btn"><i class="fas fa-eye"></i></button>
+                                    <button class="action-btn edit-btn"><i class="fas fa-edit"></i></button>
+                                    <button class="action-btn delete-btn"><i class="fas fa-trash"></i></button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>James Davis</td>
+                                <td>james@example.com</td>
+                                <td>April 15, 2025</td>
+                                <td><span class="status active">Active</span></td>
+                                <td>
+                                    <button class="action-btn view-btn"><i class="fas fa-eye"></i></button>
+                                    <button class="action-btn edit-btn"><i class="fas fa-edit"></i></button>
+                                    <button class="action-btn delete-btn"><i class="fas fa-trash"></i></button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Emma Wilson</td>
+                                <td>emma@example.com</td>
+                                <td>April 14, 2025</td>
+                                <td><span class="status inactive">Inactive</span></td>
+                                <td>
+                                    <button class="action-btn view-btn"><i class="fas fa-eye"></i></button>
+                                    <button class="action-btn edit-btn"><i class="fas fa-edit"></i></button>
+                                    <button class="action-btn delete-btn"><i class="fas fa-trash"></i></button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="tab-content" id="recent-comments">
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>User</th>
+                                <th>Comment</th>
+                                <th>On Robot</th>
+                                <th>Date</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Robert Chen</td>
+                                <td>This robot's capabilities are incredible! The way it combines AI with mechanical engineering is revolutionary.</td>
+                                <td>Neural Nexus 3000</td>
+                                <td>April 18, 2025</td>
+                                <td>
+                                    <button class="action-btn approve-btn"><i class="fas fa-check"></i></button>
+                                    <button class="action-btn reply-btn"><i class="fas fa-reply"></i></button>
+                                    <button class="action-btn delete-btn"><i class="fas fa-trash"></i></button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Amanda Lewis</td>
+                                <td>I've seen this robot in action at a conference last month. Its movement is remarkably fluid and natural.</td>
+                                <td>BioMech Explorer</td>
+                                <td>April 17, 2025</td>
+                                <td>
+                                    <button class="action-btn approve-btn"><i class="fas fa-check"></i></button>
+                                    <button class="action-btn reply-btn"><i class="fas fa-reply"></i></button>
+                                    <button class="action-btn delete-btn"><i class="fas fa-trash"></i></button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>David Kumar</td>
+                                <td>The applications for this technology in healthcare are mind-blowing. Can't wait to see how it develops further!</td>
+                                <td>MedAssist Pro</td>
+                                <td>April 16, 2025</td>
+                                <td>
+                                    <button class="action-btn approve-btn"><i class="fas fa-check"></i></button>
+                                    <button class="action-btn reply-btn"><i class="fas fa-reply"></i></button>
+                                    <button class="action-btn delete-btn"><i class="fas fa-trash"></i></button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Jessica Martinez</td>
+                                <td>I have questions about the battery life. Has anyone tested it in extreme weather conditions?</td>
+                                <td>Quantum Leap Drone</td>
+                                <td>April 15, 2025</td>
+                                <td>
+                                    <button class="action-btn approve-btn"><i class="fas fa-check"></i></button>
+                                    <button class="action-btn reply-btn"><i class="fas fa-reply"></i></button>
+                                    <button class="action-btn delete-btn"><i class="fas fa-trash"></i></button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Thomas Anderson</td>
+                                <td>The security implications of this robot are impressive. I'd love to see more details about its threat detection algorithms.</td>
+                                <td>Sentinel X</td>
+                                <td>April 14, 2025</td>
+                                <td>
+                                    <button class="action-btn approve-btn"><i class="fas fa-check"></i></button>
+                                    <button class="action-btn reply-btn"><i class="fas fa-reply"></i></button>
+                                    <button class="action-btn delete-btn"><i class="fas fa-trash"></i></button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- Quick Actions -->
+            <section class="quick-actions">
+                <h2>Quick Actions</h2>
+                <div class="actions-grid">
+                    <a href="add-robot.html" class="action-card">
+                        <i class="fas fa-plus-circle"></i>
+                        <h3>Add New Robot</h3>
+                    </a>
+                    <a href="add-category.html" class="action-card">
+                        <i class="fas fa-folder-plus"></i>
+                        <h3>Create Category</h3>
+                    </a>
+                    <a href="add-news.html" class="action-card">
+                        <i class="fas fa-newspaper"></i>
+                        <h3>Publish News</h3>
+                    </a>
+                    <a href="export-data.html" class="action-card">
+                        <i class="fas fa-file-export"></i>
+                        <h3>Export Data</h3>
+                    </a>
+                </div>
+            </section>
+
+            <!-- Website Performance -->
+            <section class="performance">
+                <h2>Website Performance</h2>
+                <div class="chart-container">
+                    <div class="chart-card">
+                        <h3>Visitors Overview</h3>
+                        <div class="chart" id="visitorsChart">
+                            <!-- Chart will be rendered by JavaScript -->
+                            <div class="placeholder-chart">
+                                <div class="bar" style="height: 40%;"></div>
+                                <div class="bar" style="height: 60%;"></div>
+                                <div class="bar" style="height: 75%;"></div>
+                                <div class="bar" style="height: 65%;"></div>
+                                <div class="bar" style="height: 90%;"></div>
+                                <div class="bar" style="height: 80%;"></div>
+                                <div class="bar" style="height: 95%;"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="chart-card">
+                        <h3>Popular Categories</h3>
+                        <div class="chart" id="categoriesChart">
+                            <!-- Chart will be rendered by JavaScript -->
+                            <div class="placeholder-pie">
+                                <div class="pie-segment" style="--segment-color: var(--primary-color); --segment-size: 35%;"></div>
+                                <div class="pie-segment" style="--segment-color: var(--secondary-color); --segment-size: 25%;"></div>
+                                <div class="pie-segment" style="--segment-color: var(--accent-color); --segment-size: 20%;"></div>
+                                <div class="pie-segment" style="--segment-color: #76ff03; --segment-size: 15%;"></div>
+                                <div class="pie-segment" style="--segment-color: #ff9800; --segment-size: 5%;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Recent Notifications -->
+            <section class="notifications">
+                <h2>Recent Notifications</h2>
+                <div class="notification-list">
+                    <div class="notification-item unread">
+                        <div class="notification-icon">
+                            <i class="fas fa-user-plus"></i>
+                        </div>
+                        <div class="notification-content">
+                            <p>New user registration: <strong>Emily Johnson</strong></p>
+                            <span class="notification-time">5 minutes ago</span>
+                        </div>
+                        <div class="notification-actions">
+                            <button class="mark-read"><i class="fas fa-check"></i></button>
+                        </div>
+                    </div>
+                    <div class="notification-item unread">
+                        <div class="notification-icon">
+                            <i class="fas fa-comment"></i>
+                        </div>
+                        <div class="notification-content">
+                            <p>New comment on <strong>Neural Nexus 3000</strong> by <strong>Robert Chen</strong></p>
+                            <span class="notification-time">20 minutes ago</span>
+                        </div>
+                        <div class="notification-actions">
+                            <button class="mark-read"><i class="fas fa-check"></i></button>
+                        </div>
+                    </div>
+                    <div class="notification-item">
+                        <div class="notification-icon">
+                            <i class="fas fa-robot"></i>
+                        </div>
+                        <div class="notification-content">
+                            <p>New robot entry submitted: <strong>ServoMaster 9000</strong></p>
+                            <span class="notification-time">1 hour ago</span>
+                        </div>
+                        <div class="notification-actions">
+                            <button class="view-notification"><i class="fas fa-eye"></i></button>
+                        </div>
+                    </div>
+                    <div class="notification-item">
+                        <div class="notification-icon">
+                            <i class="fas fa-exclamation-triangle"></i>
+                        </div>
+                        <div class="notification-content">
+                            <p>Content report: Inappropriate comment on <strong>MedAssist Pro</strong></p>
+                            <span class="notification-time">3 hours ago</span>
+                        </div>
+                        <div class="notification-actions">
+                            <button class="view-notification"><i class="fas fa-eye"></i></button>
+                        </div>
+                    </div>
+                    <div class="notification-item">
+                        <div class="notification-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <div class="notification-content">
+                            <p>Traffic spike: <strong>257%</strong> increase in visitors</p>
+                            <span class="notification-time">Yesterday</span>
+                        </div>
+                        <div class="notification-actions">
+                            <button class="view-notification"><i class="fas fa-eye"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="../js/admin.js"></script>
+</body>
+</html>
