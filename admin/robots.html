@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage Robots | MOOK Robotics Hub</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/admin.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="admin-panel">
+        <!-- Sidebar Navigation -->
+        <aside class="admin-sidebar">
+            <div class="admin-logo">
+                <h2>MOOK</h2>
+                <p>Admin Panel</p>
+            </div>
+            <ul class="admin-nav">
+                <li>
+                    <a href="dashboard.html">
+                        <i class="fas fa-tachometer-alt"></i> Dashboard
+                    </a>
+                </li>
+                <li>
+                    <a href="robots.html" class="active">
+                        <i class="fas fa-robot"></i> Robots
+                    </a>
+                </li>
+                <li>
+                    <a href="categories.html">
+                        <i class="fas fa-list"></i> Categories
+                    </a>
+                </li>
+                <li>
+                    <a href="news.html">
+                        <i class="fas fa-newspaper"></i> News
+                    </a>
+                </li>
+                <li>
+                    <a href="users.html">
+                        <i class="fas fa-users"></i> Users
+                    </a>
+                </li>
+                <li>
+                    <a href="comments.html">
+                        <i class="fas fa-comments"></i> Comments
+                    </a>
+                </li>
+                <li>
+                    <a href="settings.html">
+                        <i class="fas fa-cog"></i> Settings
+                    </a>
+                </li>
+                <li>
+                    <a href="../index.html">
+                        <i class="fas fa-home"></i> Back to Site
+                    </a>
+                </li>
+                <li>
+                    <a href="#" id="adminLogout">
+                        <i class="fas fa-sign-out-alt"></i> Logout
+                    </a>
+                </li>
+            </ul>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="admin-content">
+            <header class="admin-header">
+                <h1>Manage Robots</h1>
+                <div class="admin-search">
+                    <input type="text" placeholder="Search robots...">
+                    <i class="fas fa-search"></i>
+                </div>
+                <div class="admin-user-menu">
+                    <div class="user-dropdown">
+                        <div class="user-avatar">A</div>
+                        <span class="user-name">Admin</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="dropdown-content">
+                        <a href="profile.html">
+                            <i class="fas fa-user"></i> Profile
+                        </a>
+                        <a href="settings.html">
+                            <i class="fas fa-cog"></i> Settings
+                        </a>
+                        <a href="#" id="headerLogout">
+                            <i class="fas fa-sign-out-alt"></i> Logout
+                        </a>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Action Buttons -->
+            <div class="page-actions">
+                <a href="add-robot.html" class="btn-primary">
+                    <i class="fas fa-plus"></i> Add New Robot
+                </a>
+                <div class="filter-actions">
+                    <select id="categoryFilter">
+                        <option value="">All Categories</option>
+                        <option value="humanoid">Humanoid</option>
+                        <option value="industrial">Industrial</option>
+                        <option value="biomimetic">Biomimetic</option>
+                        <option value="domestic">Domestic</option>
+                        <option value="medical">Medical</option>
+                        <option value="aerial">Aerial</option>
+                        <option value="autonomous">Autonomous</option>
+                    </select>
+                    <select id="sortOrder">
+                        <option value="name_asc">Name (A-Z)</option>
+                        <option value="name_desc">Name (Z-A)</option>
+                        <option value="date_desc">Newest First</option>
+                        <option value="date_asc">Oldest First</option>
+                        <option value="views_desc">Most Viewed</option>
+                    </select>
+                    <button class="btn-filter">
+                        <i class="fas fa-filter"></i> Filter
+                    </button>
+                </div>
+            </div>
+
+            <!-- Robots List -->
+            <section class="robots-list">
+                <div class="data-table-container">
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th class="sort-asc">Robot Name</th>
+                                <th>Image</th>
+                                <th>Category</th>
+                                <th>Manufacturer</th>
+                                <th>Date Added</th>
+                                <th>Status</th>
+                                <th>Views</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Atlas</td>
+                                <td class="table-image">
+                                    <img src="https://via.placeholder.com/50x50" alt="Atlas" class="thumbnail">
+                                </td>
+                                <td>Humanoid</td>
+                                <td>Boston Dynamics</td>
+                                <td>April 15, 2025</td>
+                                <td><span class="status active">Published</span></td>
+                                <td>3,421</td>
+                                <td>
+                                    <div class="row-actions">
+                                        <button class="action-btn view-btn" title="View"><i class="fas fa-eye"></i></button>
+                                        <button class="action-btn edit-btn" title="Edit"><i class="fas fa-edit"></i></button>
+                                        <button class="action-btn delete-btn" title="Delete"><i class="fas fa-trash"></i></button>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Spot</td>
+                                <td class="table-image">
+                                    <img src="https://via.placeholder.com/50x50" alt="Spot" class="thumbnail">
+                                </td>
+                                <td>Quadruped</td>
+                                <td>Boston Dynamics</td>
+                                <td>April 14, 2025</td>
+                                <td><span class="status active">Published</span></td>
+                                <td>2,987</td>
+                                <td>
+                                    <div class="row-actions">
+                                        <button class="action-btn view-btn" title="View"><i class="fas fa-eye"></i></button>
+                                        <button class="action-btn edit-btn" title="Edit"><i class="fas fa-edit"></i></button>
+                                        <button class="action-btn delete-btn" title="Delete"><i class="fas fa-trash"></i></button>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Sophia</td>
+                                <td class="table-image">
+                                    <img src="https://via.placeholder.com/50x50" alt="Sophia" class="thumbnail">
+                                </td>
+                                <td>Humanoid</td>
+                                <td>Hanson Robotics</td>
+                                <td>April 12, 2025</td>
+                                <td><span class="status active">Published</span></td>
+                                <td>2,543</td>
+                                <td>
+                                    <div class="row-actions">
+                                        <button class="action-btn view-btn" title="View"><i class="fas fa-eye"></i></button>
+                                        <button class="action-btn edit-btn" title="Edit"><i class="fas fa-edit"></i></button>
+                                        <button class="action-btn delete-btn" title="Delete"><i class="fas fa-trash"></i></button>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Pepper</td>
+                                <td class="table-image">
+                                    <img src="https://via.placeholder.com/50x50" alt="Pepper" class="thumbnail">
+                                </td>
+                                <td>Social</td>
+                                <td>SoftBank Robotics</td>
+                                <td>April 10, 2025</td>
+                                <td><span class="status active">Published</span></td>
+                                <td>1,982</td>
+                                <td>
+                                    <div class="row-actions">
+                                        <button class="action-btn view-btn" title="View"><i class="fas fa-eye"></i></button>
+                                        <button class="action-btn edit-btn" title="Edit"><i class="fas fa-edit"></i></button>
+                                        <button class="action-btn delete-btn" title="Delete"><i class="fas fa-trash"></i></button>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>ASIMO</td>
+                                <td class="table-image">
+                                    <img src="https://via.placeholder.com/50x50" alt="ASIMO" class="thumbnail">
+                                </td>
+                                <td>Humanoid</td>
+                                <td>Honda</td>
+                                <td>April 8, 2025</td>
+                                <td><span class="status active">Published</span></td>
+                                <td>1,854</td>
+                                <td>
+                                    <div class="row-actions">
+                                        <button class="action-btn view-btn" title="View"><i class="fas fa-eye"></i></button>
+                                        <button class="action-btn edit-btn" title="Edit"><i class="fas fa-edit"></i></button>
+                                        <button class="action-btn delete-btn" title="Delete"><i class="fas fa-trash"></i></button>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Neural Nexus 3000</td>
+                                <td class="table-image">
+                                    <img src="https://via.placeholder.com/50x50" alt="Neural Nexus 3000" class="thumbnail">
+                                </td>
+                                <td>AI/Machine Learning</td>
+                                <td>Neuralink</td>
+                                <td>April 5, 2025</td>
+                                <td><span class="status active">Published</span></td>
+                                <td>1,582</td>
+                                <td>
+                                    <div class="row-actions">
+                                        <button class="action-btn view-btn" title="View"><i class="fas fa-eye"></i></button>
+                                        <button class="action-btn edit-btn" title="Edit"><i class="fas fa-edit"></i></button>
+                                        <button class="action-btn delete-btn" title="Delete"><i class="fas fa-trash"></i></button>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>BioMech Explorer</td>
+                                <td class="table-image">
+                                    <img src="https://via.placeholder.com/50x50" alt="BioMech Explorer" class="thumbnail">
+                                </td>
+                                <td>Biomimetic</td>
+                                <td>BioRobotics Inc.</td>
+                                <td>April 3, 2025</td>
+                                <td><span class="status active">Published</span></td>
+                                <td>1,312</td>
+                                <td>
+                                    <div class="row-actions">
+                                        <button class="action-btn view-btn" title="View"><i class="fas fa-eye"></i></button>
+                                        <button class="action-btn edit-btn" title="Edit"><i class="fas fa-edit"></i></button>
+                                        <button class="action-btn delete-btn" title="Delete"><i class="fas fa-trash"></i></button>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Quantum Leap Drone</td>
+                                <td class="table-image">
+                                    <img src="https://via.placeholder.com/50x50" alt="Quantum Leap Drone" class="thumbnail">
+                                </td>
+                                <td>Aerial</td>
+                                <td>DroneTech Solutions</td>
+                                <td>April 1, 2025</td>
+                                <td><span class="status active">Published</span></td>
+                                <td>1,245</td>
+                                <td>
+                                    <div class="row-actions">
+                                        <button class="action-btn view-btn" title="View"><i class="fas fa-eye"></i></button>
+                                        <button class="action-btn edit-btn" title="Edit"><i class="fas fa-edit"></i></button>
+                                        <button class="action-btn delete-btn" title="Delete"><i class="fas fa-trash"></i></button>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>MedAssist Pro</td>
+                                <td class="table-image">
+                                    <img src="https://via.placeholder.com/50x50" alt="MedAssist Pro" class="thumbnail">
+                                </td>
+                                <td>Medical</td>
+                                <td>MediTech Robotics</td>
+                                <td>March 28, 2025</td>
+                                <td><span class="status active">Published</span></td>
+                                <td>987</td>
+                                <td>
+                                    <div class="row-actions">
+                                        <button class="action-btn view-btn" title="View"><i class="fas fa-eye"></i></button>
+                                        <button class="action-btn edit-btn" title="Edit"><i class="fas fa-edit"></i></button>
+                                        <button class="action-btn delete-btn" title="Delete"><i class="fas fa-trash"></i></button>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Sentinel X</td>
+                                <td class="table-image">
+                                    <img src="https://via.placeholder.com/50x50" alt="Sentinel X" class="thumbnail">
+                                </td>
+                                <td>Security</td>
+                                <td>SecureTech Systems</td>
+                                <td>March 25, 2025</td>
+                                <td><span class="status active">Published</span></td>
+                                <td>854</td>
+                                <td>
+                                    <div class="row-actions">
+                                        <button class="action-btn view-btn" title="View"><i class="fas fa-eye"></i></button>
+                                        <button class="action-btn edit-btn" title="Edit"><i class="fas fa-edit"></i></button>
+                                        <button class="action-btn delete-btn" title="Delete"><i class="fas fa-trash"></i></button>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>EduBot Mini</td>
+                                <td class="table-image">
+                                    <img src="https://via.placeholder.com/50x50" alt="EduBot Mini" class="thumbnail">
+                                </td>
+                                <td>Educational</td>
+                                <td>Learning Robotics Inc.</td>
+                                <td>March 20, 2025</td>
+                                <td><span class="status pending">Draft</span></td>
+                                <td>0</td>
+                                <td>
+                                    <div class="row-actions">
+                                        <button class="action-btn view-btn" title="View"><i class="fas fa-eye"></i></button>
+                                        <button class="action-btn edit-btn" title="Edit"><i class="fas fa-edit"></i></button>
+                                        <button class="action-btn delete-btn" title="Delete"><i class="fas fa-trash"></i></button>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>ServoMaster 9000</td>
+                                <td class="table-image">
+                                    <img src="https://via.placeholder.com/50x50" alt="ServoMaster 9000" class="thumbnail">
+                                </td>
+                                <td>Industrial</td>
+                                <td>Industrial Robotics Co.</td>
+                                <td>March 18, 2025</td>
+                                <td><span class="status pending">Pending Review</span></td>
+                                <td>0</td>
+                                <td>
+                                    <div class="row-actions">
+                                        <button class="action-btn view-btn" title="View"><i class="fas fa-eye"></i></button>
+                                        <button class="action-btn edit-btn" title="Edit"><i class="fas fa-edit"></i></button>
+                                        <button class="action-btn delete-btn" title="Delete"><i class="fas fa-trash"></i></button>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <!-- Pagination -->
+                <div class="pagination-container">
+                    <div class="pagination-info">
+                        Showing 1-12 of 42 robots
+                    </div>
+                    <div class="pagination">
+                        <button class="pagination-btn disabled"><i class="fas fa-chevron-left"></i></button>
+                        <button class="pagination-btn active">1</button>
+                        <button class="pagination-btn">2</button>
+                        <button class="pagination-btn">3</button>
+                        <button class="pagination-btn">4</button>
+                        <button class="pagination-btn"><i class="fas fa-chevron-right"></i></button>
+                    </div>
+                    <div class="pagination-options">
+                        <label>
+                            Show
+                            <select class="per-page-select">
+                                <option>12</option>
+                                <option>24</option>
+                                <option>48</option>
+                                <option>All</option>
+                            </select>
+                            per page
+                        </label>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Bulk Actions -->
+            <section class="bulk-actions">
+                <h3>Bulk Actions</h3>
+                <div class="bulk-actions-container">
+                    <select id="bulkAction">
+                        <option value="">Select Action</option>
+                        <option value="publish">Publish</option>
+                        <option value="draft">Move to Draft</option>
+                        <option value="featured">Mark as Featured</option>
+                        <option value="trending">Mark as Trending</option>
+                        <option value="delete">Delete</option>
+                    </select>
+                    <button class="btn-apply">Apply</button>
+                    
+                    <div class="bulk-export">
+                        <button class="btn-export" data-format="csv">
+                            <i class="fas fa-file-csv"></i> Export as CSV
+                        </button>
+                        <button class="btn-export" data-format="json">
+                            <i class="fas fa-file-code"></i> Export as JSON
+                        </button>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="../js/admin.js"></script>
+</body>
+</html>
